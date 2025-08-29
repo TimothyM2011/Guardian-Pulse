@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuardianPulse Project - Single Page</title>
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles not supported by Tailwind go here */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f3f4f6;
+            background-image: url('background.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        /* Overlay for readability */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            z-index: -1;
+        }
+
+        /* Set min-height to push footer down */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex-grow: 1;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(90deg, #4299e1, #3182ce);
+        }
+
+        .header-bg {
+            background: linear-gradient(135deg, #4299e1, #3182ce);
+        }
+
+        /* Scrollbar styles for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #3182ce;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2b6cb0;
+        }
+
+        /* New custom style to ensure the image fills the circular container */
+        .circle-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="sticky top-0 z-50 py-4 px-6 md:px-12 text-white shadow-lg gradient-bg">
+        <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <h1 class="text-3xl font-bold tracking-wide">GuardianPulse Project</h1>
+            <div class="flex flex-wrap justify-center space-x-2 sm:space-x-4">
+                <a href="#home" class="px-3 py-2 rounded-lg hover:bg-white hover:text-[#4299e1] transition-colors duration-300">Home</a>
+                <a href="#problem" class="px-3 py-2 rounded-lg hover:bg-white hover:text-[#4299e1] transition-colors duration-300">Problem</a>
+                <a href="#solution" class="px-3 py-2 rounded-lg hover:bg-white hover:text-[#4299e1] transition-colors duration-300">Solution</a>
+                <a href="#market" class="px-3 py-2 rounded-lg hover:bg-white hover:text-[#4299e1] transition-colors duration-300">Market</a>
+                <a href="#sdg" class="px-3 py-2 rounded-lg hover:bg-white hover:text-[#4299e1] transition-colors duration-300">SDG</a>
+                <a href="#data" class="px-3 py-2 rounded-lg hover:bg-white hover:text-[#4299e1] transition-colors duration-300">Data</a>
+                <a href="#feedback" class="px-3 py-2 rounded-lg hover:bg-white hover:text-[#4299e1] transition-colors duration-300">Feedback</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Sections -->
+    <main class="container mx-auto p-4 md:p-8">
+
+        <!-- Home Section -->
+        <section id="home" class="mb-16 py-12 px-8 bg-white rounded-2xl shadow-xl flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-12">
+            <div>
+                <h2 class="text-4xl font-extrabold text-[#3182ce] mb-4">Welcome to GuardianPulse</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">Our project focuses on helping elderly people by monitoring their health and providing emergency alerts using a <strong class="text-blue-600">smartwatch</strong> and <strong class="text-blue-600">mobile app</strong>.</p>
+                <p class="text-lg text-gray-700 leading-relaxed">Explore the sections below to learn about the problem, our solution, its relevance to SDG 3, and how we plan to bring this idea to the market.</p>
+            </div>
+            <img src="logo.png" alt="GuardianPulse Product Visual" class="rounded-xl shadow-lg w-full md:w-auto md:max-w-md">
+        </section>
+
+        <!-- Problem Section -->
+        <section id="problem" class="mb-16 py-12 px-8 bg-white rounded-2xl shadow-xl">
+            <h2 class="text-3xl font-bold text-[#3182ce] mb-6 border-b-4 border-blue-400 pb-2 inline-block">The Problem: A Growing Need for Care</h2>
+            <p class="text-lg text-gray-700 leading-relaxed">As the global population ages, the need for effective and accessible care for the elderly becomes more critical. Many seniors live independently, which can put them at risk of falls, medical emergencies, or other unforeseen incidents without immediate assistance. The GuardianPulse system addresses this by providing a reliable and non-intrusive way to ensure their safety and well-being, offering peace of mind to both them and their families.</p>
+        </section>
+
+        <!-- Solution Section -->
+        <section id="solution" class="mb-16 py-12 px-8 bg-white rounded-2xl shadow-xl">
+            <h2 class="text-3xl font-bold text-[#3182ce] mb-6 border-b-4 border-blue-400 pb-2 inline-block">The GuardianPulse System</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-6 rounded-xl bg-blue-50 shadow-md">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-4">Smartwatch</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Monitors heart rate, oxygen level, and movement</li>
+                        <li>Fall detection with automatic alert system</li>
+                        <li>Emergency SOS button for manual alerts</li>
+                    </ul>
+                </div>
+                <div class="p-6 rounded-xl bg-blue-50 shadow-md">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-4">Mobile App</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Live health data dashboard for caregivers</li>
+                        <li>Instant emergency notifications to family/caregivers</li>
+                        <li>Routines & medication reminders</li>
+                        <li>Location tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Market Strategy Section -->
+        <section id="market" class="mb-16 py-12 px-8 bg-white rounded-2xl shadow-xl">
+            <h2 class="text-3xl font-bold text-[#3182ce] mb-6 border-b-4 border-blue-400 pb-2 inline-block">Go-to-Market Strategy</h2>
+            <ol class="list-decimal list-inside text-gray-700 space-y-4">
+                <li><b>Dubai Pilot Launch</b> – Target affluent families in Dubai and Sharjah through healthcare partnerships and community outreach programs.</li>
+                <li><b>Healthcare Partnerships</b> – Collaborate with Dubai Health Authority, private clinics, and geriatricians for credibility and distribution.</li>
+                <li><b>Digital Marketing</b> – Social media campaigns targeting adult children of elderly parents, emphasizing peace of mind and safety.</li>
+                <li><b>Community Programs</b> – Partner with senior centers, community clubs, and cultural organizations for awareness and demonstrations.</li>
+            </ol>
+            <p class="mt-6 text-lg text-gray-800 font-medium"><b>Key Success Factor:</b> Word-of-mouth referrals from satisfied families supported by testimonials and case studies.</p>
+        </section>
+
+        <!-- SDG Section -->
+        <section id="sdg" class="mb-16 py-12 px-8 bg-white rounded-2xl shadow-xl">
+            <h2 class="text-3xl font-bold text-[#3182ce] mb-6 border-b-4 border-blue-400 pb-2 inline-block">Alignment with UN Sustainable Development Goals (SDG)</h2>
+            <div class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+                <div class="bg-green-100 p-6 rounded-xl shadow-md w-full">
+                    <h3 class="text-xl font-bold text-green-700 mb-2">SDG 3: Good Health and Well-being</h3>
+                    <p class="text-gray-700 leading-relaxed">GuardianPulse directly contributes to SDG 3 by providing a technological solution to enhance the health and well-being of the elderly. Our system aims to reduce preventable injuries and deaths, ensuring a healthier life for a vulnerable population segment.</p>
+                </div>
+                <!-- Circular image container -->
+                <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-green-500 shadow-2xl transition duration-300 transform hover:scale-105">
+                    <img 
+                        src="sdg3.png" 
+                        alt="SDG 3 Logo" 
+                        class="circle-image"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Section -->
+        <section id="data" class="mb-16 py-12 px-8 bg-white rounded-2xl shadow-xl">
+            <h2 class="text-3xl font-bold text-[#3182ce] mb-6 border-b-4 border-blue-400 pb-2 inline-block">Key Statistics About the Elderly</h2>
+            <p class="text-lg text-gray-700 mb-4">Understanding the scale of the challenge is crucial. Here are some key statistics that highlight the importance of GuardianPulse:</p>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>By 2050, 1 in 6 people in the world will be over age 65 (UN Data).</li>
+                <li>Falls are the leading cause of injury and death among older adults.</li>
+                <li>In the UAE, life expectancy has risen to 78 years, increasing elderly care needs.</li>
+            </ul>
+        </section>
+
+        <!-- Feedback Section -->
+        <section id="feedback" class="py-12 px-8 bg-white rounded-2xl shadow-xl flex flex-col items-center text-center">
+            <h2 class="text-3xl font-bold text-[#3182ce] mb-6 border-b-4 border-blue-400 pb-2 inline-block">We’d Love Your Feedback!</h2>
+            <p class="text-lg text-gray-700 mb-6">Please share your thoughts using the form below to help us improve GuardianPulse.</p>
+            <a href="https://forms.office.com/r/zumFhxNEq6" target="_blank" class="px-8 py-4 bg-blue-600 text-white font-bold rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300">Click here to give feedback</a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 px-4 md:px-12 mt-auto text-center text-white gradient-bg">
+        <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-4">
+            <!-- SVG placeholder for logo -->
+            <svg class="w-8 h-8 text-white fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-5h2v5h-2zm1-9c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z" />
+            </svg>
+            <p class="text-base font-light">&copy; GuardianPulse 2025 ❤️</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
